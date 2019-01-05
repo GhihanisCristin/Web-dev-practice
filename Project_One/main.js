@@ -27,7 +27,7 @@ function createBiluta(tag,bTitle,bClass){
 }
 
 for (var i=0; i<images.length; i++){
-    createBiluta('span', images[i].alt, 'biluta'); 
+    createBiluta('span', images[i].alt, 'biluta'+i); 
 }
 
 window.addEventListener("load", ()=> showImage(index));
