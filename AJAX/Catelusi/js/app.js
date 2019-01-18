@@ -40,17 +40,39 @@ function generateImage(cale){
 
 // PAS 3: obtine o lista de rase de caini (https://dog.ceo/api/breeds/list)
 // Apeleaza functia generateOptions(), care afiseaza raspunsul in <select> 
+fetch("https://dog.ceo/api/breeds/list")
+    .then(res => res.json())
+    .then(data => generateOptions(data.message));
 
+function generateOptions(options){
+    options.forEach(element => {
+        var addOption = document.createElement("option");
+        addOption.textContent = element;
+        breeds.appendChild(addOption);
+    });
+};
 
 // ------------------------------------------
 //  EVENT LISTENERS
 // ------------------------------------------
 
 // PAS 4: la schimbarea optiunii din <select> afiseaza o imagine din rasa selectata
-
+breeds.addEventListener("change", (event) => {
+    card.removeChild(card.firstChild);
+    var path = "https://dog.ceo/api/breed/" + event.target.value + "/images/random";
+    fetch(path)
+    .then(res => res.json())
+    .then(data => generateImage(data.message));
+});
 
 // PAS 5: la click in interiorul <div>-ului afiseaza alta imagine din rasa selectata
-
+card.addEventListener("click", () =>{
+    card.removeChild(card.firstChild);
+    var path = "https://dog.ceo/api/breed/" + breeds.value + "/images/random";
+    fetch(path)
+    .then(res => res.json())
+    .then(data => generateImage(data.message));
+});
 // PAS 6: Creati o functie fetchData(url) care sa automatizeze primii doi pasi dintr-un request 
 // (trimiterea request-ului si parsarea raspunsului JSON)
 
