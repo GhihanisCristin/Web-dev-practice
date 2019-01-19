@@ -83,14 +83,14 @@ card.addEventListener("click", () =>{
 
 
 // PAS 8 - integrati primele doua comenzi .fetch() intr-o singura comanda Promise.all()
-
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 
 
 // ------------------------------------------
 //  POST DATA
 // ------------------------------------------
-
-
+//Try this: fetch("url", {method:"POST"}), vezi aici: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+//Babeljs.io
 // PAS 9 - Transmiteti datele completate in formular printr-un request POST, catre https://jsonplaceholder.typicode.com/posts 
 // Printati in consola raspunsul primit de la server, impreuna cu un mesaj custom.  
 
