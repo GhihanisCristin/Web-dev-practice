@@ -106,4 +106,4 @@ card.addEventListener("click", () =>{
 // generateOptions(data)
 // Functie custom, care completeaza optiunile din <select>
 
-
+// reset git credentials: control panel > user accounts > credential manager > Windows credentials > Generic credentials
